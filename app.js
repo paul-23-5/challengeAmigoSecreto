@@ -19,9 +19,21 @@ function actualizarAmigos() {
   lista.innerHTML = "";
   for (const amigo of amigos) {
     nuevoElemento = document.createElement("li");
-    console.log(nuevoElemento);
     nuevoElemento.innerHTML = amigo;
-    console.log(amigo);
     lista.appendChild(nuevoElemento);
   }
+}
+
+function sortearAmigo() {
+  let numeroSorteado;
+  let nombreSorteado;
+  if (amigos.length != 0) {
+    console.log(amigos.length);
+    numeroSorteado = Math.floor(Math.random() * amigos.length);
+    console.log(numeroSorteado);
+    nombreSorteado = amigos[numeroSorteado];
+    document.getElementById(
+      "resultado"
+    ).innerHTML = `el amigo sorteado es '${nombreSorteado}'`;
+  } else alert("la lista de amigos esta vacia");
 }
